@@ -1,0 +1,12 @@
+{
+    "env": {
+        "production": {
+            "optional": ["optimisation"]
+        }
+    },
+    "optional": ["es7.classProperties", "es7.decorators", "runtime"],
+    "loose": "all",
+    "ignore": [
+        "node_modules/**/*.js"
+    ]
+}
