@@ -38,6 +38,8 @@ describe('TaskBoxComponent', function() {
 
             TestUtils.Simulate.change(inputBox, {target: {value: 'some title'}});
             TestUtils.Simulate.keyDown(inputBox, {which: 27});
+
+            expect(inputBox.value).toBe('some title');
             expect(spy.calls.length).toBe(0);
         });
     });
