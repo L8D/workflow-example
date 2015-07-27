@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Dispatcher} from 'flux';
 import TestUtils from 'react/lib/ReactTestUtils';
+import expect from 'expect';
 
 export class WithDispatcher extends Component {
     static propTypes = {
@@ -35,4 +36,13 @@ export function mountWithDispatcher(dispatcher, element) {
     const component = TestUtils.findRenderedComponentWithType(parent, element.type);
 
     return component;
+}
+
+export function setupElement(element) {
+    const dispatcher = new Dispatcher();
+    const spy = expect.spyOn(dispatcher, 'dispatch');
+
+    const component = mountWithDispatcher(dispatcher, element);
+
+    return {spy, dispatcher, component};
 }
