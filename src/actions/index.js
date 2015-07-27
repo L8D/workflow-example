@@ -3,3 +3,10 @@ export class CreateTaskAction {
         this.title = title;
     }
 }
+
+export class UpdateTaskAction {
+    constructor(taskId, attrs) {
+        this.taskId = taskId;
+        this.attrs = attrs;
+    }
+}

@@ -8,12 +8,22 @@ export class TaskBoxComponent extends Component {
         dispatcher: React.PropTypes.instanceOf(Dispatcher)
     }
 
-    constructor(props, context) {
-        super(props, context);
+    state = {
+        title: ''
+    }
 
-        this.state = {
-            title: ''
-        };
+    handleChange = event => {
+        this.setState({title: event.target.value});
+    }
+
+    handleKeyDown = event => {
+        const {dispatcher} = this.context;
+        const {title} = this.state;
+
+        if (event.which === 13) { // enter
+            dispatcher.dispatch(new CreateTaskAction(title));
+            this.setState({title: ''});
+        }
     }
 
     render() {
@@ -30,19 +40,5 @@ export class TaskBoxComponent extends Component {
                 />
             </div>
         );
-    }
-
-    handleChange = event => {
-        this.setState({title: event.target.value});
-    }
-
-    handleKeyDown = event => {
-        const {dispatcher} = this.context;
-        const {title} = this.state;
-
-        if (event.which === 13) { // enter
-            dispatcher.dispatch(new CreateTaskAction(title));
-            this.setState({title: ''});
-        }
     }
 }

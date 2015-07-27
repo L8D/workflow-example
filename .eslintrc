@@ -23,6 +23,9 @@
         "indent": [2, 4],
         "quotes": [2, "single"],
 
+        "camelcase": 0,
+        "no-use-before-define": 0,
+
         // React
         "react/display-name": 0,
         "react/jsx-boolean-value": 1,
