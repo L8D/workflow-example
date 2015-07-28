@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "babel-runtime": "^5.7.0",
+    "backbone": "^1.2.1",
     "di": "^2.0.0-pre-14",
-    "exoskeleton": "^0.7.0",
     "flux": "^2.0.3",
     "react": "^0.14.0-beta1",
     "uuid": "^2.0.1"

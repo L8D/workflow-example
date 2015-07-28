@@ -1,4 +1,4 @@
-import {Model, Collection} from 'exoskeleton';
+import {Model, Collection} from 'backbone';
 import uuid from 'uuid';
 
 export class Task extends Model {
