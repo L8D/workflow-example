@@ -31,4 +31,16 @@ export class Task extends Model {
 
 export class TaskCollection extends Collection {
     model = Task;
+
+    useFilter(filterName) {
+        if (filterName === 'all') {
+            return this.toArray();
+        } else if (filterName === 'completed') {
+            return this.where({completed: true});
+        } else if (filterName === 'active') {
+            return this.where({completed: false});
+        } else {
+            throw new TypeError(`"${filterName}" is not a valid filterName`);
+        }
+    }
 }

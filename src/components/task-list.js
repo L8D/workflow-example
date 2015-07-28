@@ -5,12 +5,15 @@ import {TaskComponent} from './task';
 
 export class TaskListComponent extends Component {
     static propTypes = {
-        tasks: React.PropTypes.instanceOf(TaskCollection)
+        tasks: React.PropTypes.instanceOf(TaskCollection).isRequired,
+        filterName: React.PropTypes.oneOf(['all', 'completed', 'active']).isRequired
     }
 
     render() {
-        const {tasks} = this.props;
-        const items = tasks.map(task => <TaskComponent key={task.cid} task={task}/>);
+        const {tasks, filterName} = this.props;
+        const items = tasks
+            .useFilter(filterName)
+            .map(task => <TaskComponent key={task.cid} task={task}/>);
 
         return (
             <div className="tapp-task-list">{items}</div>
