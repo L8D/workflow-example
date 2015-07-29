@@ -3,7 +3,7 @@
 import React from 'react';
 import TestUtils from 'react/lib/ReactTestUtils';
 import expect from 'expect';
-import {setupElement} from '../../src/components/util';
+import {setupElement} from '../util';
 
 import {Task, TaskCollection} from '../../src/models/task';
 import {TaskListComponent} from '../../src/components/task-list';

@@ -4,7 +4,7 @@ import React from 'react';
 import TestUtils from 'react/lib/ReactTestUtils';
 import expect from 'expect';
 import {Dispatcher} from 'flux';
-import {setupElement} from '../../src/components/util';
+import {setupElement} from '../util';
 
 import {Task} from '../../src/models/task';
 import {UpdateTaskAction} from '../../src/actions';
