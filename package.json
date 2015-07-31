@@ -5,13 +5,14 @@
     "comb": "csscomb src --verbose",
     "test": "eslint . && NODE_ENV=test mocha",
     "cover": "NODE_ENV=test istanbul cover _mocha",
-    "coveralls": "NODE_ENV=test istanbul cover --report lcovonly _mocha && coveralls < ./coverage/lcov.info"
+    "coveralls": "NODE_ENV=test istanbul cover --report lcovonly _mocha && coveralls < ./coverage/lcov.info && codacy-coverage < ./coverage/lcov.info"
   },
   "devDependencies": {
     "babel": "^5.8.3",
     "babel-core": "^5.8.19",
     "babel-eslint": "^4.0.5",
     "babel-loader": "^5.3.2",
+    "codacy-coverage": "^1.1.2",
     "coveralls": "^2.11.3",
     "eslint": "^0.24.1",
     "eslint-loader": "^0.14.1",
