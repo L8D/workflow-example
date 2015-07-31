@@ -1,9 +1,8 @@
-/* global describe, it, beforeEach */
+/* global describe, it */
 
 import React from 'react';
 import TestUtils from 'react/lib/ReactTestUtils';
 import expect from 'expect';
-import {Dispatcher} from 'flux';
 import {setupElement} from '../util';
 
 import {CreateTaskAction} from '../../src/actions';
@@ -22,7 +21,7 @@ describe('TaskBoxComponent', function() {
         });
 
         it('should clear the input box after the user creates a task', function() {
-            const {component, spy} = setupElement(<TaskBoxComponent/>);
+            const {component} = setupElement(<TaskBoxComponent/>);
             const {inputBox} = component.refs;
 
             TestUtils.Simulate.change(inputBox, {target: {value: 'some title'}});
